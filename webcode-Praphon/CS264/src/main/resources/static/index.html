@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registeration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Add your CSS file here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container p-3 m-2 border rounded mt-3" style="max-width: 900px">
+      <h1 class="Register_head">แบบฟอร์มลงทะเบียนยื่นคำร้องเพิ่มถอนรายวิชา</h1>
+      <h5 class="mt-4  Register_head">ข้อมูลส่วนตัว</h5>
+        <hr>
+      <form class="needs-validation" novalidate onsubmit="">
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="form-group col">
+            <label for="studentTitle" class="mb-1">คำนำหน้าชื่อ</label>
+            <select
+              class="form-select form-select-lg"
+              id="studentTitle"
+              name="studentTitle"
+              required
+            >
+              <option value="นาย">นาย</option>
+              <option value="นาง">นาง</option>
+              <option value="นางสาว">นางสาว</option>
+            </select>
+          </div>
+          <div class="form-group col">
+            <label for="studentFirstName">ชื่อ</label>
+            <input
+              type="text"
+              id="studentFirstName"
+              name="studentFirstName"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+          <div class="form-group col">
+            <label for="studentLastName">สกุล</label>
+            <input
+              type="text"
+              id="studentLastName"
+              name="studentLastName"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="studentId">เลขทะเบียน</label>
+            <input
+              type="text"
+              id="studentId"
+              name="studentId"
+              class="form-control"
+              required
+              required
+              pattern="^\d{10}$"
+            />
+
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Invalid student ID format. It must be 10 digits.
+            </div>
+          </div>
+          <div class="form-group col">
+            <label for="studentYear">ชั้นปีที่</label>
+            <input
+              type="text"
+              id="studentYear"
+              name="studentYear"
+              class="form-control"
+              required
+              required
+              pattern="^[1-7]$"
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Invalid student year. It must be between 1 and 7.
+            </div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="studyField">สาขาวิชา</label>
+          <input
+            type="text"
+            id="studyField"
+            name="studyField"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+        <div class="form-group col">
+          <label for="advisorName">ชื่อนามสกุลอาจารย์ที่ปรึกษา</label>
+          <input
+            type="text"
+            id="advisorName"
+            name="advisorName"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+        <div class="form-group col">
+          <label for="cause">เหตุผลการเพิ่มถอน</label>
+          <input
+            type="text"
+            id="cause"
+            name="cause"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+        <h5 class="mt-4  Register_head">ที่พักอาศัยอยู่ ณ ปัจจุบัน</h5>
+        <hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+          <div class="form-group col">
+            <label for="addressNumber">บ้านเลขที่</label>
+            <input
+              type="text"
+              id="addressNumber"
+              name="addressNumber"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+          <div class="form-group col">
+            <label for="moo">หมู่</label>
+            <input
+              type="text"
+              id="moo"
+              name="moo"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+          <div class="form-group col">
+            <label for="tumbol">ตำบล</label>
+            <input
+              type="text"
+              id="tumbol"
+              name="tumbol"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+          <div class="form-group col">
+            <label for="amphur">อำเภอ</label>
+            <input
+              type="text"
+              id="amphur"
+              name="amphur"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+          <div class="form-group col">
+            <label for="province">จังหวัด</label>
+            <input
+              type="text"
+              id="province"
+              name="province"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">This field is required.</div>
+          </div>
+          <div class="form-group col">
+            <label for="postalCode">รหัสไปรษณีย์</label>
+            <input
+              type="text"
+              id="postalCode"
+              name="postalCode"
+              class="form-control"
+              required
+              required
+              pattern="^\d{5}$"
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Invalid Postcode Number. The number must have 5 digit.
+            </div>
+          </div>
+          <div class="form-group col">
+            <label for="mobilePhone">เบอร์โทรศัพท์มือถือ</label>
+            <input
+              type="text"
+              id="mobilePhone"
+              name="mobilePhone"
+              class="form-control"
+              required
+              required
+              pattern="^\d{10}$"
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Invalid mobile phone number. The number must have 10 digit.
+            </div>
+          </div>
+          <div class="form-group col">
+            <label for="phone">เบอร์โทรศัพท์บ้าน</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              class="form-control"
+              oninput="updatePattern(this)"
+            />
+            <div class="invalid-feedback">
+              Invalid phoneNumber. The number must have 10 digit.
+            </div>
+          </div>
+        </div>
+        <h5 class="mt-4  Register_head">รายละเอียดการเพิ่มถอนรายวิชา</h5>
+        <h6 class="Register_head">ต้องมีรายการอย่างน้อย 1 รายการ</h6>
+        <hr>
+        <div class="form-group">
+          <label for="courseList"
+            >รายการวิชาที่จะขอเพิ่ม วิชาที่ 1 ถึง 10</label
+          >
+          <div id="course-fields-container">
+            <button
+              class="btn btn-outline-secondary btn-sm my-2"
+              id="add-course"
+              type="button"
+              onclick="addCourseField()"
+            >
+              Add Course
+            </button>
+            <!-- Add by JS -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="courseList"
+            >รายการวิชาที่จะขอถอน วิชาที่ 1 ถึง 10</label
+          >
+          <div id="course-fields-container-withdraw">
+            <button
+              class="btn btn-outline-secondary btn-sm my-2"
+              id="withdraw-course"
+              type="button"
+              onclick="withDrawCourseField()"
+            >
+              Add Course
+            </button>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

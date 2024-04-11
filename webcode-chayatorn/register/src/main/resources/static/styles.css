@@ -1,0 +1,125 @@
+body {
+    border-style: hidden;
+    color: black; 
+    font-family: 'Kanit', sans-serif;
+    margin: 2%;
+    background-color: rgb(255, 187, 0);
+}
+
+.center {
+    text-align: center;
+    padding: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    order: 2;
+    margin-left: 15px;
+}
+
+.below {
+    display: block;  /* This is the default behavior for <div> elements */
+    margin-top: 5px;  /* Optional: Adds some space between divs */
+}
+
+.right {
+    position: absolute;
+    right: 50px;
+}
+
+.rounded-box {
+    border: 2px black; /* Adding a border for visual clarity */
+    padding: 10px;           /* Some space inside the box */
+    border-radius: 10px;     /* This rounds the corners */
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.concat {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+form {
+    font-size: 14px;
+    border: 2px black; /* Adding a border for visual clarity */
+    padding: 10px;           /* Some space inside the box */
+    border-radius: 10px;     /* This rounds the corners */
+    background-color: rgba(255, 255, 255, 0.75);
+}
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    margin-left: 10px;
+}
+
+table input{
+    margin: auto;
+}
+
+table input[type="checkbox"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    
+}
+.inline label{
+    display: inline-block;
+    text-indent: 25px;
+}
+
+label[for="cause"]{
+    font-size: 12px;
+    font-style: normal;
+}
+.big-input {
+    font-size: 14px;          /* Larger font size */
+    padding: 15px;            /* Increase padding */
+    width: 92%;              /* Full width (or you can set a specific width in px, em, etc.) */
+    box-sizing: border-box;   /* Ensure that padding and border are included in the total width/height */
+    border: 2px solid #ccc;   /* Slightly thicker border */
+    border-radius: 5px;
+    height: 3em;   
+    margin-left: 10px;    
+}
+
+.data label{
+    margin-left: 20px;
+}
+h2{
+    margin-left: 15px;
+}
+.button-flat {
+    background-color: #65b4fe; /* Blue color */
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-flat:hover {
+    background-color: #99abb5; /* Darker blue on hover */
+}
+
+.input-group label, .input-group input, .input-group select {
+    display: inline-block;
+    margin: 5px 10px; /* Adjust spacing as required */
+}
+
+/* Style input to take up the remaining horizontal space */
+.input-group input, .input-group select {
+    width: auto; /* Assumes 150px for label, adjust accordingly */
+}

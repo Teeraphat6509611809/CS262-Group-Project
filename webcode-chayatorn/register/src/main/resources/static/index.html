@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+    <title>คำร้องเพิ่ม-ถอน รายวิชา</title>
+</head>
+<body>
+   <form action="done.html">
+        <div class="center">
+            <img src="TuLogo.png" style="width: 100px; height: 100px;">
+            <h1>แบบฟอร์มยื่นคำร้องเพิ่ม-ถอน รายวิชา<br /></h1>
+            <h2>คณะวิทยาศาสตร์ มหาวิทยาลัยธรรมศาสตร์<br /></h2>
+        </div>
+    
+        <div>
+            <label>วันที่:</label>
+            <input type="text" id="date" placeholder="วันที่" required>
+        </div>
+
+        <h2 style="border-bottom: 2px solid black; display: inline-block;">ข้อมูลส่วนตัว</h2>
+        <div style="margin-left: 20px;">
+
+            <label for="studentTitle">คำนำหน้า:</label>
+            <select id="studentTitle" name="studentTitle" required>
+                <option value="Mr">นาย</option>
+                <option value="Ms">นาง</option>
+                <option value="Mrs">นางสาว</option>
+            </select>
+
+            <label for="studentFirstName">ชื่อ:</label>
+            <input type="text" id="studentFirstName" name="studentFirstName" placeholder="ชื่อ" required>
+
+            <label for="studentLastName">นามสกุล:</label>
+            <input type="text" id="studentLastName" name="studentLastName" placeholder="นามสกุล" required>
+
+            <label for="studentId">รหัสนักศึกษา:</label>
+            <input type="text" id="studentId" name="studentId" required placeholder="รหัสนักศึกษา 10 หลัก" pattern="^\d{10}$">
+
+            <div class="below">
+                <label for="studentYear">ชั้นปีที่:</label>
+                <input type="text" name="studentYear" id="studentYear" required placeholder="ชั้นปี 1-7" pattern="^[1-7]$">
+                
+                <label for="studyField" style="line-break: anywhere;">สาขาวิชา:</label>
+                <input type="text" id="studyField" name="studyField" placeholder="สาขาวิชา" required>
+    
+                <label for="advisor">อาจารย์ที่ปรึกษา:</label>
+                <input type="text" id="advisor" name="advisor" placeholder="อาจารย์ที่ปรึกษา" required>
+            </div>
+
+            <div class="below">
+                <label for="mobilePhone">โทรศัพท์มือถือ:</label>
+                <input type="text" id="mobilePhone" name="mobilePhone" required placeholder="โทรศัพท์มือถือ" pattern="^[0-9]{10}$">
+
+                <label for="phone">โทรศัพท์บ้าน(ถ้ามี):</label>
+                <input type="text" id="phone" name="phone" placeholder="โทรศัพท์บ้าน(ถ้ามี)" pattern="^[0-9]{10}$">
+            </div>
+
+        </div>
+
+
+        <h2 style="border-bottom: 2px solid black; display: inline-block;">ที่อยู่อาศัย</h2>
+        <div style="margin-left: 20px;">
+            
+            <label for="addressNumber">บ้านเลขที่:</label>
+            <input type="text" id="addressNumber" name="addressNumber" placeholder="บ้านเลขที่" required>
+
+            <label for="moo">หมู่(ถ้ามี):</label>
+            <input type="text" id="moo" name="moo" placeholder="หมู่(ถ้ามี)" title="หมู่(ถ้ามี)">
+
+            <div class="below">
+
+                <label for="tumbol">ตำบล:</label>
+                <input type="text" id="tumbol" name="tumbol" placeholder="ตำบล" required>
+                
+                <label for="amphur">อำเภอ:</label>
+                <input type="text" id="amphur" name="amphur" placeholder="อำเภอ" required>
+                
+                <label for="province">จังหวัด:</label>
+                <input type="text" id="province" name="province" placeholder="จังหวัด" required>
+
+            </div>
+
+            <div class="below">
+                <label for="postalCode">รหัสไปรษณีย์:</label>
+                <input type="text" id="postalCode" name="postalCode" placeholder="รหัสไปรษณีย์" required>
+            </div>
+
+        </div>
+
+        <label for="add-course">เพิ่มรายวิชา</label>
+        <div class="form-group">
+            <label for="add-course">รายการวิชาที่จะขอเพิ่ม วิชาที่ 1 ถึง 10</label>
+            <div id="course-fields-container">
+              <button
+                class="btn btn-outline-secondary btn-sm my-2"
+                id="add-course"
+                type="button"
+                onclick="addCourseField()"
+              >
+                เพิ่มรายวิชาเพิ่ม
+              </button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="withdraw-course"
+              >รายการวิชาที่จะขอถอน วิชาที่ 1 ถึง 10</label
+            >
+            <div id="course-fields-container-withdraw">
+              <button
+                class="btn btn-outline-secondary btn-sm my-2"
+                id="withdraw-course"
+                type="button"
+                onclick="withDrawCourseField()"
+              >
+                เพิ่มรายวิชาถอน
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+          <div class="below">
+              <label for="cause" style="margin-left: 15px;">เหตุผลในการเพิ่ม-ถอนรายวิชา:</label><br>
+              <input id="cause" name="cause" placeholder="เหตุผลในการเพิ่ม-ถอน" required title="เหตุผลในการเพิ่ม-ถอน" class="big-input">
+            </div>
+        <div class="center">
+            <button type="submit" id="submit" onclick="submitData()">ส่งแบบฟอร์ม</button>
+        </div>
+</form>
+
+
+
+
+<script src="students.js"></script>
+
+</body>
+</html>
