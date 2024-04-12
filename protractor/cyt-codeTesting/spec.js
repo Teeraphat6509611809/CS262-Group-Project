@@ -123,6 +123,10 @@ describe('Protractor Demo App',  function() {
         element(by.id(`AddsubjectDate${i}`)).sendKeys(addsubjDateList[i-1]);
         element(by.id(`AddsubjectCredit${i}`)).sendKeys("3");
         element(by.id(`AddsubjectTeacher${i}`)).sendKeys(addSubjTeacherList[i-1]);
+        let check = Math.random() > 0.5;
+        if(check){
+          element(by.id(`AddsubjectTeacherCheck${i}`)).click();
+        }
       });
       }
       
@@ -194,15 +198,46 @@ describe('Protractor Demo App',  function() {
         element(by.id(`WithdrawsubjectDate${i}`)).sendKeys(withdrawsubjDateList[i-1]);
         element(by.id(`WithdrawsubjectCredit${i}`)).sendKeys("3");
         element(by.id(`WithdrawsubjectTeacher${i}`)).sendKeys(withdrawSubjTeacherList[i-1]);
+        let check = Math.random() > 0.5;
+        if(check){
+          element(by.id(`WithdrawsubjectTeacherCheck${i}`)).click();
+        }
+        
       });
       }
-      
+      browser.sleep(10000);
       await element(by.id("submit")).click();
       browser.sleep(2000);
       element(by.css("body > h1:nth-child(1)")).getText().then(function(Text){
         expect(Text).toEqual("บันทึกสำเร็จ");
       });
     });
+    it('should exist 2nd add subj after delete and create one',async function(){
+      browser.ignoreSynchronization = true;
+      browser.get('http://localhost:5500/');
+      for(let i = 0 ; i < 3 ; i++){
+        await element(by.id("add-course")).click();
+      }
+      await element(by.xpath("/html/body/form/div[5]/div/div[2]/div/button")).click();
+      await element(by.id("add-course")).click();
+      element(by.id("AddsubjectCode2")).isPresent().then(function(present){
+        expect(present).toBe(true);
+      });
+    });
+    it('should response alert after sending unfinised form in 1 second',async function(){
+      browser.ignoreSynchronization = true;
+      browser.get('http://localhost:5500/');
+      await element(by.id("studentFirstName")).sendKeys("Songsak");
+      await element(by.id("submit")).click();
+      var EC = protractor.ExpectedConditions;
+      browser.wait(EC.alertIsPresent(), 1000, "alert time out");
+      var alertDialog = browser.switchTo().alert();
+      alertDialog.getText().then(function(alertText) {
+        expect(alertText).toEqual('บันทึกรายวิชาไม่สำเร็จ');
+      });
+      alertDialog.accept();
+    });
+
 
   });
   
