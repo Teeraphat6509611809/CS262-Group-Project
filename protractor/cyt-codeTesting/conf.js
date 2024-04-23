@@ -2,7 +2,7 @@
 exports.config = {
     framework: 'jasmine',
     capabilities:{
-        browserName: 'firefox'
+        browserName: 'chrome'
     },
     //กำหนดให้ Selenium Server ทำ Action
     seleniumAddress: 'http://localhost:4444/wd/hub',

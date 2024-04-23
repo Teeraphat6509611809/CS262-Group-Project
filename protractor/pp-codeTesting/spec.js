@@ -178,8 +178,8 @@ describe('Protractor Demo App',  function() {
       browser.ignoreSynchronization = true;
       browser.get('http://localhost:5500/');
       await element(by.id("studentId")).sendKeys("111was1111");
-      let submit = await element(by.xpath("/html/body/div/form/button"));
-      await browser.executeScript('window.scrollTo(0, document.body.scrollHeight);'); // don't delete!!
+      let submit = await element(by.css("button.btn:nth-child(14)"));
+      await browser.executeScript("arguments[0].scrollIntoView(true);", submit.getWebElement()); // don't delete!!
       browser.sleep(800);
       await submit.click();
       var alertDialog = browser.switchTo().alert();
