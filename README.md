@@ -1,1 +1,1 @@
-run npm install mysql before test
+# run npm install mysql before test
